@@ -15,6 +15,19 @@ python第三方认证登录包
 安装
 ================
 
+
+```shell
+easy_install pysns
+```
+
+或者
+
+```shell
+pip install pysns
+```
+
+或者
+
 ```shell
 git clone http://git.oschina.net/zakzou/pysns.git
 cd pysns
