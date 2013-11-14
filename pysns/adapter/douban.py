@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
+import liboauth2
 
 from base import BaseOAuth2
 
@@ -21,6 +22,7 @@ class Douban(BaseOAuth2):
         self.expires_in = result['expires_in']
 
         self.client.set_access_token(self.access_token)
+        self.client.set_access_token_type(liboauth2.ACCESS_TOKEN_BEARER)
         result = self.fetch('/user/~me', kwargs)
         self.name = result['name']
         self.avatar = result['avatar']
