@@ -5,7 +5,7 @@ import os
 import sys
 
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 
 ROOT_DIR = os.path.dirname(os.path.realpath(__file__))

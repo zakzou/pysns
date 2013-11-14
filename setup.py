@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 setup(
         name = 'pysns',
-        version = '0.0.1',
+        version = '0.0.2',
         keywords = ('OAuth2 Client', 'OAuth2', 'Login'),
         description = 'Third-party login',
         long_description = 'See http://github.com/zakzou/pysns',
