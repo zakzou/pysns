@@ -21,6 +21,7 @@ class Renren(BaseOAuth2):
 
         self.client.set_access_token(self.access_token)
         result = self.fetch('/user/get', kwargs)
-        self.name = result[0]['name']
-        self.avatar = result[0]['tinyurl']
-        self.avatar_large = result[0]['headurl']
+        self.name = result['response']['name']
+        avatar = dict((x['size'], x['url']) for x in result['response']['avatar'])
+        self.avatar = avatar['MAIN']
+        self.avatar_large = avatar['LARGE']
