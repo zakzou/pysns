@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 setup(
         name = 'pysns',
-        version = '0.0.3',
+        version = __import__('pysns').__version__,
         keywords = ('OAuth2 Client', 'OAuth2', 'Login'),
         description = 'Third-party login',
         long_description = 'See http://github.com/zakzou/pysns',
@@ -20,7 +20,7 @@ setup(
         packages = find_packages(),
         include_package_data = True,
         platforms = 'any',
-        install_requires = ['simplejson>=2.3.2', 'liboauth2>=0.0.1'],
+        install_requires = ['simplejson>=2.3.2', 'liboauth2>=0.0.4'],
         classifiers=[
             "Environment :: Web Environment",
             "Intended Audience :: Developers",

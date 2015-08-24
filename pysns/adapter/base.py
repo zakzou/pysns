@@ -11,6 +11,12 @@ from urllib import unquote
 from exception import OAuth2Error, ApiError
 
 
+def to_ascii(string):
+    if isinstance(string, unicode):
+        string = string.encode('utf-8')
+    return string
+
+
 class Response(object):
 
     def __init__(self, code, result, content_type):
