@@ -41,7 +41,6 @@ class BaseOAuth2(object):
     ERROR_CODE_PARAM_NAME = ''
     ERROR_MSG_PARAM_NAME = ''
 
-
     def __init__(self, client_id, client_secret, redirect_uri):
         self.client_id = client_id
         self.client_secret = client_secret
@@ -90,4 +89,6 @@ class BaseOAuth2(object):
             resp['result'] = self.urldecode(resp['result'])
         else:
             resp['result'] = self.jsondecode(resp['result'])
+        if self.ERROR_MSG_PARAM_NAME in resp['result']:
+            resp['code'] = 400
         return Response(**resp)

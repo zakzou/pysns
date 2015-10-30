@@ -10,6 +10,9 @@ class Weixin(BaseOAuth2):
     TOKEN_ENDPOINT = 'https://api.weixin.qq.com/sns/oauth2/access_token'
     API_URL = 'https://api.weixin.qq.com'
 
+    ERROR_CODE_PARAM_NAME = 'errcode'
+    ERROR_MSG_PARAM_NAME = 'errmsg'
+
     def __init__(self, client_id, client_secret, redirect_uri):
         super(Weixin, self).__init__(client_id, client_secret, redirect_uri)
         self.client.key_map = dict(client_id='appid', client_secret='secret')
